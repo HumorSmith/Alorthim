@@ -6,5 +6,5 @@
 #define ALORTHIM_INSERT_SORT_H
 
 #include "../common.h"
-void insert_sort(Element);
+void insert_sort(Element* arr,int len);
 #endif //ALORTHIM_INSERT_SORT_H
