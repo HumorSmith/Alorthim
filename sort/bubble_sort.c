@@ -4,7 +4,7 @@
 #include "bubble_sort.h"
 
 
-void bubble_sort(Elment *arr, int len) {
+void bubble_sort(Element *arr, int len) {
     if (arr == NULL || len == 0) {
         return;
     }
@@ -22,7 +22,7 @@ void bubble_sort(Elment *arr, int len) {
     }
 };
 
-void bubble_sort_plus(Elment *arr, int len) {
+void bubble_sort_plus(Element *arr, int len) {
     if (arr == NULL || len == 0) {
         return;
     }

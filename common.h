@@ -7,10 +7,10 @@
 
 #include <stdio.h>
 
-#define Elment int
+#define Element int
 
-void printArr(Elment *arr, int len);
+void printArr(Element *arr, int len);
 
-void swap(Elment *a, Elment *b);
+void swap(Element *a, Element *b);
 
 #endif //ALORTHIM_COMMON_H

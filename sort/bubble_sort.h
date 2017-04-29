@@ -6,7 +6,7 @@
 #define ALORTHIM_BUBBLESORT_H
 
 #include "../common.h"
-void bubble_sort(Elment* arr,int len);
-void bubble_sort_plus(Elment* arr,int lent);
-void swap(Elment* a,Elment* b);
+void bubble_sort(Element* arr,int len);
+void bubble_sort_plus(Element* arr,int len);
+void swap(Element* a,Element* b);
 #endif //ALORTHIM_BUBBLESORT_H
