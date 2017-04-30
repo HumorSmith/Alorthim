@@ -38,13 +38,18 @@ void test_shell_sort(){
 void test_shell_sort_plus(){
     int len = 6;
     Element arr[6] = {1, 2, 3, 7, 6, 5};
-    shell_sort(arr, len);
+    shell_sort_plus(arr, len);
     printArr(arr,len);
 };
 
-
+void test_shell_sort_swap(){
+    int len = 6;
+    Element arr[6] = {1, 2, 3, 7, 6, 5};
+    shell_sort_swap(arr, len);
+    printArr(arr,len);
+}
 
 int main(void) {
-    test_shell_sort_plus();
+    test_shell_sort_swap();
     return 0;
 }
