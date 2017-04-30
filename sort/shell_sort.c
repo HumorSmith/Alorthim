@@ -63,7 +63,7 @@ void shell_sort_plus(int arr[], int len)
 }
 
 
-void shell_sort_swap(int arr[], int len)
+void xshell_sort_swap(int arr[], int len)
 {
     int i, j, gap;
 

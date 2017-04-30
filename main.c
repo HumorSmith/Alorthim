@@ -2,6 +2,7 @@
 #include "sort/bubble_sort.h"
 #include "sort/insert_sort.h"
 #include "sort/shell_sort.h"
+#include "sort/quick_sort.h"
 void test_bubble() {
     int len = 6;
     Element arr[6] = {1, 2, 3, 7, 6, 5};
@@ -42,14 +43,17 @@ void test_shell_sort_plus(){
     printArr(arr,len);
 };
 
-void test_shell_sort_swap(){
+
+
+void test_quick_sort(){
     int len = 6;
     Element arr[6] = {1, 2, 3, 7, 6, 5};
-    shell_sort_swap(arr, len);
+    quick_sort(arr, 0,len);
     printArr(arr,len);
 }
 
+
 int main(void) {
-    test_shell_sort_swap();
+    test_quick_sort();
     return 0;
 }
