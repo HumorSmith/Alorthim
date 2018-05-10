@@ -3,28 +3,49 @@
 //
 
 #include "quick_sort.h"
+void quick_sort(Element *arr, int len) {
+    quick_sort_inner(arr, 0, len -1);
+}
 
-//找出storeIndex
-int partition(Element *arr, int left, int right) {
-    int storeIndex = left;
-    int pivot = arr[right]; // 直接选最右边的元素为基准元素
-    int i = 0;
-    for (i = left; i < right; i++) {
-        if (arr[i] < pivot) {
-            swap(&arr[storeIndex], &arr[i]);
-            storeIndex++; // 交换位置后，storeIndex 自增 1，代表下一个可能要交换的位置
+Element MEDIAN3(Element *arr, int left, int right) {
+    int centerPos = (left + right) / 2;
+    if (arr[left] > arr[centerPos]) {
+        swap(&arr[left], &arr[centerPos]);
+    }
+    if (arr[left] > arr[right]) {
+        swap(&arr[left], &arr[right]);
+    }
+
+    if (arr[centerPos] > arr[right]) {
+        swap(&arr[centerPos], &arr[right]);
+    }
+    printf("left = %d  center = %d  right = %d \n",arr[left],arr[centerPos],arr[right  ]);
+    return arr[ centerPos];
+};
+
+void quick_sort_inner(Element *arr, int left, int right) {
+    //找准pivot
+    if (0 < right - left) {
+
+        int pivot = MEDIAN3(arr,left,right);
+        int low = left;
+        int high = right ;
+        while (1) {
+
+            while (arr[++low] < pivot) {};
+            while (arr[--high] > pivot) {};
+            if (low < high) {
+                printf("swap %d   and %d \n",arr[low],arr[high]);
+                swap(&arr[low], &arr[high]);
+            } else {
+                break;
+            }
         }
+        quick_sort_inner(arr, left, low-1);    /* 递归解决左边 */
+        quick_sort_inner(arr, low, right);   /* 递归解决右边 */
     }
-    swap(&arr[storeIndex], &arr[right]);// 将基准元素放置到最后的正确位置上
-    return storeIndex;
-}
+};
 
 
-void quick_sort(Element *arr, int left, int right) {
-    if (left > right) {
-        return;
-    }
-    int storeIndex = partition(arr, left, right);
-    quick_sort(arr, left, storeIndex - 1);
-    quick_sort(arr, storeIndex + 1, right);
-}
+
+

@@ -6,5 +6,7 @@
 #define ALORTHIM_QUICK_SORT_H
 
 #include "../common.h"
-void quick_sort(Element * arr, int left, int right);
+void quick_sort(Element * arr,int len);
+void quick_sort_inner(Element *arr, int left, int right);
+Element MEDIAN3(Element *arr,int left,int right);
 #endif //ALORTHIM_QUICK_SORT_H

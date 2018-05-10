@@ -7,4 +7,5 @@
 
 #include "../common.h"
 void insert_sort(Element* arr,int len);
+void insert_sort_plus(Element* arr,int len);
 #endif //ALORTHIM_INSERT_SORT_H
